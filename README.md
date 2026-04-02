@@ -1,2 +1,2 @@
-# PlaywrightCrest
-Repo for OrangeCrest Playwright training
+# Play-right-Garden
+Personal playgarden for Playwright
