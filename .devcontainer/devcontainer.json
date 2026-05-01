@@ -1,0 +1,58 @@
+{
+  "name": "Playwright Crest Dev",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bookworm",
+  
+  "remoteEnv": {
+    "NODE_ENV": "development"
+  },
+
+  "features": {
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+      "version": "latest"
+    }
+  },
+
+  "postCreateCommand": "npm install",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-playwright.playwright",
+        "ms-vscode.makefile-tools",
+        "charliermarsh.ruff",
+        "eamodio.gitlens",
+        "GitHub.copilot"
+      ],
+      "settings": {
+        "playwright.showLaunchLog": true,
+        "playwright.showDebugLog": true
+      }
+    }
+  },
+
+  "mounts": [
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/node/.ssh,readonly",
+    "source=/var/run/docker.sock,target=/var/run/docker.sock"
+  ],
+
+  "forwardPorts": [
+    5173,
+    5000,
+    5432
+  ],
+
+  "portsAttributes": {
+    "5173": {
+      "label": "Frontend",
+      "onAutoForward": "notify"
+    },
+    "5000": {
+      "label": "Backend API",
+      "onAutoForward": "notify"
+    },
+    "5432": {
+      "label": "PostgreSQL",
+      "onAutoForward": "silent"
+    }
+  }
+}
