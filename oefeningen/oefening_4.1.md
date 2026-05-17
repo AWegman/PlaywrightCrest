@@ -1,3 +1,4 @@
+Oefening 4.1 Aanmaken van AGENTS.MD 
 Het telkens opnieuw moeten meegeven van dezelfde instructies in een prompt is tijdrovend en foutgevoelig. Om dit op te lossen, maken we gebruik van Agent Skills. Hiermee leggen we vooraf onze werkinstructies vast, zodat de Agents deze automatisch oppikken zodra we ze een opdracht geven.
 
 Wat is een Skill?
