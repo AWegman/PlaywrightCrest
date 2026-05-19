@@ -90,7 +90,7 @@ Zorg dat je bent ingelogd in de Claude-extensie met je (gratis) Claude-account. 
 - Typ bovenin de balk die verschijnt: Preferences: Open User Settings (JSON) en druk op Enter.
 - Er opent nu een bestand genaamd settings.json.
 - Scroll helemaal naar beneden in dit bestand. Voeg vóór de allerlaatste accolade (}) een komma toe aan de regel erboven, en plak daarna de code voor Playwright MCP erin:
-
+{
     "claude.mcp": {
             "mcpServers": {
                 "playwright": {
@@ -99,6 +99,7 @@ Zorg dat je bent ingelogd in de Claude-extensie met je (gratis) Claude-account. 
                 }
             }
         }
+}
 
 Het moet er onderaan je bestand zo uit komen te zien:
 
