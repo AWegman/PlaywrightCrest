@@ -100,7 +100,6 @@ Zorg dat je bent ingelogd in de Claude-extensie met je (gratis) Claude-account. 
             }
         }
 
-
 Het moet er onderaan je bestand zo uit komen te zien:
 
 {
