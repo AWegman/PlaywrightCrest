@@ -57,7 +57,7 @@ Controleer of de applicatie werkt door in je browser naar http://localhost:5173/
 ### Stap 4: Installatie Playwright & Agents
 Open een nieuwe terminal in Visual Studio Code en volg de onderstaande stappen.
 
-## Playwright installeren
+### Playwright installeren
 Voer uit in de terminal:
 
     npm init playwright@latest
@@ -70,7 +70,7 @@ Kies tijdens de configuratie voor de volgende opties:
 - Install Playwright browsers? -> true
 - Krijg je de vraag: playwright.config.ts already exists. Override it? (y/N)? Kies dan voor false (N).
 
-## Playwright Agents installeren
+### Playwright Agents installeren
 Voer in dezelfde terminal het volgende commando uit om de AI-agents voor te bereiden:
 
     npx playwright init-agents --loop=vscode
@@ -81,7 +81,7 @@ In Visual Studio Code, open het Extensies-menu (Ctrl + Shift + X). Zoek en insta
 - Playwright Test for VSCode
 - Claude Code for VS Code (of de officiële Anthropic Claude extensie)
 
-## Claude & Playwright MCP koppelen
+### Claude & Playwright MCP koppelen
 Omdat Playwright MCP een server is, moeten we Claude vertellen hoe hij ermee moet praten.
 
 Zorg dat je bent ingelogd in de Claude-extensie met je (gratis) Claude-account. Heb je deze nog niet, maak aan op: (https://claude.ai/onboarding).
@@ -89,7 +89,16 @@ Zorg dat je bent ingelogd in de Claude-extensie met je (gratis) Claude-account. 
 - Druk in VS Code op de sneltoets Ctrl + Shift + P 
 - Typ bovenin de balk die verschijnt: Preferences: Open User Settings (JSON) en druk op Enter.
 - Er opent nu een bestand genaamd settings.json.
-- Scroll helemaal naar beneden in dit bestand. Voeg vóór de allerlaatste accolade (}) een komma toe aan de regel erboven, en plak daarna de code voor Playwright MCP erin.
+- Scroll helemaal naar beneden in dit bestand. Voeg vóór de allerlaatste accolade (}) een komma toe aan de regel erboven, en plak daarna de code voor Playwright MCP erin:
+
+    "claude.mcp": {
+            "mcpServers": {
+                "playwright": {
+                    "command": "npx",
+                    "args": ["-y", "@playwright/mcp@latest"]
+                }
+            }
+        }
 
 Het moet er onderaan je bestand zo uit komen te zien:
 
