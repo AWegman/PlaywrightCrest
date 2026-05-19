@@ -102,9 +102,12 @@ Zorg dat je bent ingelogd in de Claude-extensie met je (gratis) Claude-account. 
     }
   }
 }
+```
+
 
 Het moet er onderaan je bestand zo uit komen te zien:
 
+```json
 {
     // ... hier staan al jouw andere instellingen ...
     
@@ -121,6 +124,7 @@ Het moet er onderaan je bestand zo uit komen te zien:
         }
     }
 } // Dit is de allerlaatste sluit-accolade van het bestand
+```
 
 Sla het bestand op met Ctrl + S en sluit het tabblad.
 
