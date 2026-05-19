@@ -91,19 +91,17 @@ Zorg dat je bent ingelogd in de Claude-extensie met je (gratis) Claude-account. 
 - Er opent nu een bestand genaamd settings.json.
 - Scroll helemaal naar beneden in dit bestand. Voeg vóór de allerlaatste accolade (}) een komma toe aan de regel erboven, en plak daarna de code voor Playwright MCP erin:
 
-
 ```json
 {
-    "claude.mcp": {
-        "mcpServers": {
-            "playwright": {
-                "command": "npx",
-                "args": ["-y", "@playwright/mcp@latest"]
-            }
-        }
+  "claude.mcp": {
+    "mcpServers": {
+      "playwright": {
+        "command": "npx",
+        "args": ["-y", "@playwright/mcp@latest"]
+      }
     }
+  }
 }
-
 
 Het moet er onderaan je bestand zo uit komen te zien:
 
