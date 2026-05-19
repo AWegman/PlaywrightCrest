@@ -4,100 +4,125 @@
 
 ## ✅ Wat je nodig hebt
 
-Installeer deze 3 dingen. Dat is het!
+Installeer deze 4 tools voordat we beginnen. 
 
 | Programma | Download | Waarom nodig |
 |-----------|----------|------------|
-| **Docker Desktop** | https://www.docker.com/products/docker-desktop | Draait alles in containers (database, backend, frontend) |
-| **Visual Studio Code** | https://code.visualstudio.com/ | Code editor |
-| **Git** | https://git-scm.com/ | Repository downloaden |
-
-Dat is alles! Geen Node.js, npm of iets anders nodig. Alles draait in Docker.
+| **Docker Desktop** | [Download Docker](https://www.docker.com/products/docker-desktop) | Draait de applicatie (database, backend, frontend) in containers |
+| **Node.js (v18+)** | [Download Node.js](https://nodejs.org/) | Nodig om Playwright, de MCP-server en Claude lokaal aan te sturen |
+| **Visual Studio Code** | [Download VS Code](https://code.visualstudio.com/) | De code editor waarin we werken |
+| **Git** | [Download Git](https://git-scm.com/) | Om de repository te downloaden |
 
 ---
 
-## ⚡ Quick Start (3 stappen!)
+## Quick Start
 
 ### Stap 1: Repository klonen
 
-Open Terminal/PowerShell en voer uit:
+Open je Terminal (Mac/Linux) of PowerShell (Windows) en voer de volgende commando's uit:
 
-```bash
-git clone https://github.com/AWegman/PlaywrightCrest.git C:\PlayWrightCrest
-cd C:\PlaywrightCrest
-```
+    git clone [https://github.com/AWegman/PlaywrightCrest.git](https://github.com/AWegman/PlaywrightCrest.git) C:\PlayWrightCrest
+    cd C:\PlaywrightCrest
+
+(Je mag de map uiteraard ook ergens anders plaatsen, onthoud dan even de locatie).
 
 ### Stap 2: .env bestand aanmaken
+Start Visual Studio Code op.
 
-Start Visual Studio Code op
-Selecteer Open Folder (Ctrl + K Ctrl + O)
+Selecteer Open Folder (Ctrl + K Ctrl + O) en open de map C:\PlayWrightCrest.
 
-Maak een `.env` bestand in de root van projectfolder met deze inhoud:
+Maak een nieuw bestand aan (Ctrl + N), noem het .env en plak de volgende inhoud erin:
 
-```
-DB_USER=postgres
-DB_PASSWORD=postgres
-DB_NAME=play_right_garden
-NODE_ENV=development
-```
+    Codefragment
+    DB_USER=postgres
+    DB_PASSWORD=postgres
+    DB_NAME=play_right_garden
+    NODE_ENV=development
 
-**In VSCode:**
-1. Druk `Ctrl + N` → New File
-2. Voeg de bovenstaande inhoud toe
-3. Sla op als `.env` (File → Save As)
+Sla het bestand op in de hoofdmap (root) van het project.
 
-### Stap 3: Start Docker
+### Stap 3: Start de applicatie via Docker
+Zorg dat Docker Desktop open is en op de achtergrond draait.
 
-Zorg dat Docker Desktop **open en draaiend** is!
+Open in Visual Studio Code een nieuwe terminal (`Ctrl + Shift + ``).
 
-Daarna, open in Visual Studio Code een New Terminal
-Tik in: docker-compose up
+Voer het volgende commando uit:
 
-Wacht totdat de container is opgestart.
-Open daarna: http://localhost:5173/ 
+    docker-compose up -d
 
-Wacht tot je ziet dat alles draait. Klaar!
+Wacht totdat de containers zijn opgestart.
 
-### Stap 4: Installatie Playwright en Playwright Agents
+Controleer of de applicatie werkt door in je browser naar http://localhost:5173/ te gaan.
 
-### Installatie Playwright
+### Stap 4: Installatie Playwright & Agents
+Open een nieuwe terminal in Visual Studio Code en volg de onderstaande stappen.
 
-Open een New Terminal in Visual Studio Code
-Voer uit: npm init playwright@latest
+## Playwright installeren
+Voer uit in de terminal:
 
-Kies voor
-- Do you want to use TypeScript or JavaScript? -> TypeScript
+    npm init playwright@latest
+
+Kies tijdens de configuratie voor de volgende opties:
+
+- TypeScript or JavaScript? -> TypeScript
 - Where to put your end-to-end tests? -> e2e
 - Add a GitHub Actions workflow? -> false
-- Install Playwright browsers (can be done manually via 'npx playwright install')? -> true
+- Install Playwright browsers? -> true
+- Krijg je de vraag: playwright.config.ts already exists. Override it? (y/N)? Kies dan voor false (N).
 
-Playwright wordt nu geinstalleerd.
-Als de vraag: C:\PlayWrightCrest\playwright.config.ts already exists. Override it? (y/N) komt, kies dan voor false
+## Playwright Agents installeren
+Voer in dezelfde terminal het volgende commando uit om de AI-agents voor te bereiden:
 
-### Install Playwright Agents
+    npx playwright init-agents --loop=vscode
 
-Open een nieuwe terminal (of gebruik de bestaande).
+### Stap 5: VS Code Extensies & Claude (MCP) instellen
+In Visual Studio Code, open het Extensies-menu (Ctrl + Shift + X). Zoek en installeer de volgende twee extensies:
 
-Installeer Playwright Agents:
-Voer uit: npx playwright init-agents --loop=vscode
+- Playwright Test for VSCode
+- Claude Code for VS Code (of de officiële Anthropic Claude extensie)
 
-### Stap 5: Installatie extentions in Visual Studio Code
+## Claude & Playwright MCP koppelen
+Omdat Playwright MCP een server is, moeten we Claude vertellen hoe hij ermee moet praten.
 
-in Visual Studio Code, open Extentions (Ctrl + Shift + X)
+Zorg dat je bent ingelogd in de Claude-extensie met je (gratis) Claude-account. Heb je deze nog niet, maak aan op: (https://claude.ai/onboarding).
 
-Zoek naar Playwright Test for VSCode en installeer deze
+- Druk in VS Code op de sneltoets Ctrl + Shift + P 
+- Typ bovenin de balk die verschijnt: Preferences: Open User Settings (JSON) en druk op Enter.
+- Er opent nu een bestand genaamd settings.json.
+- Scroll helemaal naar beneden in dit bestand. Voeg vóór de allerlaatste accolade (}) een komma toe aan de regel erboven, en plak daarna de code voor Playwright MCP erin.
 
-Tijdens de workshop maken we gebruik van Claude Code for VS Code.
-Zoek deze ook op in de Extiontions van Visual Studio Code en installeer deze.
-Indien er om gevraagd wordt, maak een Claude account aan (https://claude.ai/onboarding) of als je deze al hebt log ermee in als daar in Visual Studio Code om gevraagd wordt.
+Het moet er onderaan je bestand zo uit komen te zien:
+
+{
+    // ... hier staan al jouw andere instellingen ...
+    
+    "claudeCode.preferredLocation": "panel",
+    "claudeCode.environmentVariables": [
+
+    ], // <-- Vergeet de komma hier niet!
+    "claude.mcp": {
+        "mcpServers": {
+            "playwright": {
+                "command": "npx",
+                "args": ["-y", "@playwright/mcp@latest"]
+            }
+        }
+    }
+} // Dit is de allerlaatste sluit-accolade van het bestand
+
+Sla het bestand op met Ctrl + S en sluit het tabblad.
+
 
 ### Stap 6: Final check
-Wanneer alles succesvol is geinstalleerd, sluit Visual Studio Code af (of Ctrl + Shift + P en kies voor Developer: Reload Window)
-Wanneer Visual Studio Code afgesloten, open Visual Studio Code opnieuw en open het Project PlayWrightCrest.
-Open een New Terminal
+We controleren of alles goed is geïnstalleerd.
 
-Voer uit npx playwright test example.spec.ts --headed
+Herstart Visual Studio Code (Ctrl + Shift + P -> typ Developer: Reload Window). (Of sluit af en open Visual Studio Code opnieuw)
 
-Als het goed is, slagen er drie testen. 
+Open een nieuwe terminal in VS Code.
+Voer de standaard Playwright-test uit om te zien of de browsers werken:
 
-Mocht iets niet lukken of kom je ergens niet uit, laat het mij dan weten.
+    npx playwright test example.spec.ts --headed
+
+Als het goed is opent er nu kort een browser en slagen er drie tests. Als dat werkt, ben je helemaal klaar voor de workshop!
+
+Mocht je onverhoopt toch tegen issues of vragen aanlopen, laat het ons dan voor donderdag even weten, dan lossen we het samen op.
