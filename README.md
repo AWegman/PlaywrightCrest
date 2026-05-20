@@ -21,7 +21,7 @@ Installeer deze 4 tools voordat we beginnen.
 
 Open je Terminal (Mac/Linux) of PowerShell (Windows) en voer de volgende commando's uit:
 
-    git clone https://github.com/AWegman/PlaywrightCrest.git C:\temp\PlaywrightCrest C:\PlayWrightCrest
+    git clone https://github.com/AWegman/PlaywrightCrest.git C:\PlayWrightCrest
     cd C:\PlaywrightCrest
 
 (Je mag de map uiteraard ook ergens anders plaatsen, onthoud dan even de locatie).
