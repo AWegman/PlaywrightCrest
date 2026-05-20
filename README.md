@@ -21,7 +21,7 @@ Installeer deze 4 tools voordat we beginnen.
 
 Open je Terminal (Mac/Linux) of PowerShell (Windows) en voer de volgende commando's uit:
 
-    git clone [https://github.com/AWegman/PlaywrightCrest.git](https://github.com/AWegman/PlaywrightCrest.git) C:\PlayWrightCrest
+    git clone https://github.com/AWegman/PlaywrightCrest.git C:\temp\PlaywrightCrest C:\PlayWrightCrest
     cd C:\PlaywrightCrest
 
 (Je mag de map uiteraard ook ergens anders plaatsen, onthoud dan even de locatie).
@@ -48,7 +48,7 @@ Open in Visual Studio Code een nieuwe terminal (`Ctrl + Shift + ``).
 
 Voer het volgende commando uit:
 
-    docker-compose up -d
+    docker compose up -d 
 
 Wacht totdat de containers zijn opgestart.
 
@@ -57,6 +57,12 @@ Controleer of de applicatie werkt door in je browser naar http://localhost:5173/
 ### Stap 4: Installatie Playwright & Agents
 Open een nieuwe terminal in Visual Studio Code en volg de onderstaande stappen.
 
+Mocht je tijdens de uitvoering van deze stap tegen de melding aanlopen dat er geen script uitgevoerd mogen worden volg dan deze stap:
+
+- Open een Windows Powershell als Administrator op je laptop
+- Voer uit: Set-ExecutionPolicy RemoteSigned 
+- Beantwoord de vraag met Y
+
 ### Playwright installeren
 Voer uit in de terminal:
 
@@ -64,10 +70,10 @@ Voer uit in de terminal:
 
 Kies tijdens de configuratie voor de volgende opties:
 
-- TypeScript or JavaScript? -> TypeScript
-- Where to put your end-to-end tests? -> e2e
-- Add a GitHub Actions workflow? -> false
-- Install Playwright browsers? -> true
+- TypeScript or JavaScript? -> TypeScript (Druk op enter)
+- Where to put your end-to-end tests? -> e2e (Druk op enter)
+- Add a GitHub Actions workflow? -> N
+- Install Playwright browsers? -> true (Druk op enter)
 - Krijg je de vraag: playwright.config.ts already exists. Override it? (y/N)? Kies dan voor false (N).
 
 ### Playwright Agents installeren
@@ -80,6 +86,7 @@ In Visual Studio Code, open het Extensies-menu (Ctrl + Shift + X). Zoek en insta
 
 - Playwright Test for VSCode
 - Claude Code for VS Code (of de officiële Anthropic Claude extensie)
+  (Wanneer je bij installeren van Claude Code de vraag krijgt om de publisher te vertrouwen klik dan op Trust)
 
 ### Claude & Playwright MCP koppelen
 Omdat Playwright MCP een server is, moeten we Claude vertellen hoe hij ermee moet praten.
@@ -140,5 +147,6 @@ Voer de standaard Playwright-test uit om te zien of de browsers werken:
     npx playwright test example.spec.ts --headed
 
 Als het goed is opent er nu kort een browser en slagen er drie tests. Als dat werkt, ben je helemaal klaar voor de workshop!
+(Mochten er een of alle testen falen dan is er niks aan de hand, deze test is alleen om te kijken of Playwright goed werkt.)
 
 Mocht je onverhoopt toch tegen issues of vragen aanlopen, laat het ons dan voor donderdag even weten, dan lossen we het samen op.
