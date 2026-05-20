@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 const wedstrijdenToSeed = [
   { naam: 'Marathon Rotterdam', datum: '2026-04-12', afstand_km: 42.2, tijd: '', categorie: 'weg', is_pr: false },
-  { naam: 'Dam tot Damloop', datum: '2025-09-20', afstand_km: 16.1, tijd: '01:15:00', categorie: 'weg', is_pr: true },
+  { naam: 'Dam tot Damloop', datum: '2026-09-20', afstand_km: 16.1, tijd: '01:15:00', categorie: 'weg', is_pr: true },
   { naam: 'Veluwezoom Trail', datum: '2026-06-15', afstand_km: 21.1, tijd: '', categorie: 'trail', is_pr: false },
   { naam: 'Baanwedstrijd 5k', datum: '2025-05-10', afstand_km: 5.0, tijd: '00:19:45', categorie: 'baan', is_pr: true },
 ];
