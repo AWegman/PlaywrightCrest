@@ -1,7 +1,7 @@
 ### Oefening 2: Strategisch testen met de playwright-test-planner
 In deze oefening gebruik je de Test Planner agent om niet alleen code te genereren, maar eerst na te denken over wat er precies getest moet worden. 
 
-### Stap 1: De Planner aan het werk zetten
+#### Stap 1: De Planner aan het werk zetten
 De Planner-agent is bedoeld om de structuur van je testsuite te bepalen voordat er ook maar één regel code wordt geschreven.
 
 - Open de chat-interface en switch naar de agent: @playwright-test-planner.
@@ -11,7 +11,7 @@ De Planner-agent is bedoeld om de structuur van je testsuite te bepalen voordat 
 
 - De agent zal de pagina scannen en een lijst met scenario's voorstellen (bijvoorbeeld: validatie, succesvolle verzending, of foutieve invoer).
 
-### Stap 2: Beoordelen van het testplan
+#### Stap 2: Beoordelen van het testplan
 
 Bekijk de lijst met testgevallen die de agent voorstelt in de chat.
 
@@ -23,7 +23,7 @@ Bekijk de lijst met testgevallen die de agent voorstelt in de chat.
 
 Optioneel: Als je een scenario mist, kun je nu simpelweg typen: "Voeg ook een testgeval toe voor een te lang wachtwoord" of "Sla de postcode-check maar over".
 
-### Stap 3: Het plan archiveren
+#### Stap 3: Het plan archiveren
 
 - Geef de agent de opdracht om dit plan formeel op te slaan:
 
@@ -31,7 +31,7 @@ Optioneel: Als je een scenario mist, kun je nu simpelweg typen: "Voeg ook een te
 
 De agent zal nu een document (meestal een .md of een specifiek plan-bestand) aanmaken in je projectstructuur.
 
-### Stap 4: Controleer het resultaat
+#### Stap 4: Controleer het resultaat
 
 Open de verkenner (explorer) in VS Code.
 

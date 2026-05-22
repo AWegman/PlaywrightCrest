@@ -1,12 +1,12 @@
 ### Oefening 1: Werken met de playwright-test-generator en healer agent
 In deze oefening gebruik je de AI-agent om een test te schrijven op basis van een natuurlijke taal-opdracht, en gebruik je de healer om fouten te herstellen.
 
-### Stap 1: Voorbereiding
+#### Stap 1: Voorbereiding
 Zorg dat je lokale server draait op: http://localhost:5173/. (Wanneer deze nog niet draait, in de terminal, typ in: docker compose en druk op Enter)
 
 - Open de Chat-interface in je editor (waar de Playwright agents beschikbaar zijn).
 
-### Stap 2: Test genereren via de Agent
+#### Stap 2: Test genereren via de Agent
 In plaats van zelf te klikken, geef je de opdracht aan de agent.
 
 - Selecteer de agent @playwright-test-generator in het chatvenster.
@@ -18,7 +18,7 @@ De agent zal de browser op de achtergrond openen, de pagina inspecteren en een c
 
 - Klik op Insert of Copy om de test in een nieuw testbestand te plaatsen.
 
-### Stap 3: De test handmatig laten falen
+#### Stap 3: De test handmatig laten falen
 Om de "Healer" agent straks te kunnen testen, moeten we de test eerst onklaar maken.
 
 - Open het testbestand dat je net hebt gemaakt.
@@ -29,7 +29,7 @@ Om de "Healer" agent straks te kunnen testen, moeten we de test eerst onklaar ma
 - Sla het bestand op en draai de test via de Playwright Sidebar of de terminal.
 - Resultaat: De test faalt (rood).
 
-### Stap 4: De playwright-test-healer inschakelen
+#### Stap 4: De playwright-test-healer inschakelen
 Nu roepen we de hulp in van de healer-agent.
 
 - Ga terug naar het chatvenster en selecteer nu de agent @playwright-test-healer.
@@ -41,7 +41,7 @@ Nu roepen we de hulp in van de healer-agent.
 - De agent komt met een voorstel om de selector of tekst te herstellen.
 - Klik op Keep of Accept om de fix door te voeren.
 
-### Stap 5: Verificatie
+#### Stap 5: Verificatie
 
 Sla de wijzigingen op.
 

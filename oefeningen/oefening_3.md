@@ -1,7 +1,7 @@
 ### Oefening 3: Van plan naar code
 In deze oefening gaan we de stap zetten van het abstracte testplan uit de vorige opgave naar daadwerkelijk uitvoerbare code. Je leert hoe je de agent context meegeeft om slimmere tests te schrijven.
 
-### Stap 1: Specifieke tests genereren
+#### Stap 1: Specifieke tests genereren
 We gaan nu de planner vragen om een specifiek deel van het plan uit te voeren.
 
 - Open de chat-interface en selecteer de agent: @playwright-test-planner.
@@ -16,7 +16,7 @@ We gaan nu de planner vragen om een specifiek deel van het plan uit te voeren.
 
 Grote kans dat ze nu falen omdat de agent nog geen rekening hield met afhankelijkheden (zoals verplichte velden).
 
-### Stap 2: Context en afhankelijkheden toevoegen
+#### Stap 2: Context en afhankelijkheden toevoegen
 
 - Gooi het zojuist gemaakte bestand tests/naam_velden.spec.ts weg. We gaan het opnieuw doen, maar dan beter.
 - Gebruik in de chat met @playwright-test-planner de volgende uitgebreide prompt:
@@ -25,7 +25,7 @@ Grote kans dat ze nu falen omdat de agent nog geen rekening hield met afhankelij
 
 Bekijk de nieuwe code. Zie je dat de agent nu extra fill acties heeft toegevoegd?
 
-### Stap 3: Debuggen met de Healer
+#### Stap 3: Debuggen met de Healer
 
 Soms wordt een element pas zichtbaar na een actie, of staat het in een specifiek blok. We gebruiken de Healer om dit aan de agent uit te leggen.
 
@@ -38,7 +38,7 @@ De Healer zal de testcode aanpassen om eerst naar het juiste gedeelte van de pag
 
 - Klik op Keep om de verbeterde code te accepteren.
 
-### Stap 4: Check
+#### Stap 4: Check
 
 - Sla alles op.
 - Draai de tests in de naam_velden.spec.ts opnieuw.

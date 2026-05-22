@@ -1,7 +1,7 @@
 ### Oefening 5.2: Gebruik van de Skill
 Nu gaan we testen of de Agent begrijpt dat hij deze specifieke workflow moet starten zodra we hem een testscenario voorschotelen.
 
-## Stap 1: De Skill aanroepen
+#### Stap 1: De Skill aanroepen
 
 - Open een nieuwe chat met de agent @playwright-test-generator
 - Geef de Agent de volgende prompt:
@@ -15,7 +15,7 @@ Nu gaan we testen of de Agent begrijpt dat hij deze specifieke workflow moet sta
     And op de knop toevoegen klikt
     Then is de "OrangeCrest Fun Run" opgenomen in de planning
 
-### Stap 2. Controleer
+#### Stap 2. Controleer
 
 Zoek het zojuist aangemaakte test bestand op en controleer deze op de volgende punten:
 

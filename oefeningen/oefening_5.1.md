@@ -14,12 +14,12 @@ Dit bestand bevat:
 Oefening 5.1: De 'Gherkin-naar-Playwright' Skill
 In deze oefening gaan we een Skill maken die de Agent leert hoe hij een functioneel scenario (geschreven in Given-When-Then/Gherkin stijl) feilloos omzet in een Playwright test die voldoet aan onze AGENTS.md.
 
-## Stap 1: De mappenstructuur opzetten
+#### Stap 1: De mappenstructuur opzetten
 
 -  Maak in de root van je project een map aan genaamd: skills/gherking-to-playwright
 - In die map maak een nieuw bestand aan: SKILL.md
 
-## Stap 2: De Skill definiëren
+#### Stap 2: De Skill definiëren
 Plaats de volgende inhoud in het SKILL.md bestand:
 
    # Skill: Gherkin naar Playwright Converter

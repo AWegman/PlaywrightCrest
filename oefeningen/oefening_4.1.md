@@ -35,7 +35,7 @@ Om de Agent effectief te sturen, focus ik me op de volgende zaken:
 
 Het doel is om de Agent genoeg context te geven om autonoom te kunnen werken, zonder hem te verdrinken in een zee van instructies.
 
-### Oefening 4 Een AGENTS.md aanmaken
+#### Oefening 4 Een AGENTS.md aanmaken
 
 Maak in de root van het project een nieuwe bestand aan: AGENTS.md 
 In dit bestand, plaats daarin het volgende:
