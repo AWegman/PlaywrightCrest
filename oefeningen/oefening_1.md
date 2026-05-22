@@ -12,7 +12,6 @@ In plaats van zelf te klikken, geef je de opdracht aan de agent.
 - Selecteer de agent @playwright-test-generator in het chatvenster.
 - Typ de volgende prompt:
 
-    Codefragment
     "Open de website http://localhost:5173/ en genereer een simpele test die kijkt of de website online is."
 
 De agent zal de browser op de achtergrond openen, de pagina inspecteren en een codevoorstel doen.
@@ -25,7 +24,6 @@ Om de "Healer" agent straks te kunnen testen, moeten we de test eerst onklaar ma
 - Open het testbestand dat je net hebt gemaakt.
 - Pas de verwachting (de expect) aan naar iets dat niet klopt.
 
-    Codefragment
     Voorbeeld: Verander de tekst die gezocht wordt naar "Deze tekst bestaat niet".
 
 - Sla het bestand op en draai de test via de Playwright Sidebar of de terminal.
@@ -37,7 +35,6 @@ Nu roepen we de hulp in van de healer-agent.
 - Ga terug naar het chatvenster en selecteer nu de agent @playwright-test-healer.
 - Typ de volgende prompt:
 
-    Codefragment
     "Fix mijn test"
 
 - De healer-agent analyseert waarom de test faalt en vergelijkt de code met de actuele staat van de website op localhost:5173.

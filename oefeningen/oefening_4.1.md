@@ -1,4 +1,4 @@
-Oefening 4.1 Aanmaken van AGENTS.MD 
+### Oefening 4.1 Aanmaken van AGENTS.MD 
 Het telkens opnieuw moeten meegeven van dezelfde instructies in een prompt is tijdrovend en foutgevoelig. Om dit op te lossen, maken we gebruik van Agent Skills. Hiermee leggen we vooraf onze werkinstructies vast, zodat de Agents deze automatisch oppikken zodra we ze een opdracht geven.
 
 Wat is een Skill?
@@ -35,43 +35,42 @@ Om de Agent effectief te sturen, focus ik me op de volgende zaken:
 
 Het doel is om de Agent genoeg context te geven om autonoom te kunnen werken, zonder hem te verdrinken in een zee van instructies.
 
-Oefening 4 Een AGENTS.md aanmaken
+### Oefening 4 Een AGENTS.md aanmaken
 
-Maak in de root van het project een nieuwe bestand aan: AGENTS.md
-
+Maak in de root van het project een nieuwe bestand aan: AGENTS.md 
 In dit bestand, plaats daarin het volgende:
 
-# AGENTS.md - Playwright E2E Test Richtlijnen
+  # AGENTS.md - Playwright E2E Test Richtlijnen
 
-Dit document dient als handleiding voor AI-agents die werken aan dit testproject. Volg deze standaarden strikt voor consistente en robuuste tests.
+  Dit document dient als handleiding voor AI-agents die werken aan dit testproject. Volg deze standaarden strikt voor consistente en robuuste tests.
 
-## Project Context & Tech Stack
-- **Framework:** Playwright met TypeScript.
-- **Base URL:** http://localhost:5173/ (tenzij anders vermeld).
-- **Test Map:** Alle tests bevinden zich in de map `tests/` of `specs/`.
+  ## Project Context & Tech Stack
+  - **Framework:** Playwright met TypeScript.
+  - **Base URL:** http://localhost:5173/ (tenzij anders vermeld).
+  - **Test Map:** Alle tests bevinden zich in de map `tests/` of `specs/`.
 
-## Code Organisatie & Structuur
-- **Bestandstypes:** Gebruik altijd `.spec.ts` voor testbestanden.
-- **Naamgeving:** Gebruik kebab-case (bijv. `gebruikers-beheer.spec.ts`).
-- **Groepering:** Gebruik `test.describe` om gerelateerde scenario's te groeperen.
+  ## Code Organisatie & Structuur
+  - **Bestandstypes:** Gebruik altijd `.spec.ts` voor testbestanden.
+  - **Naamgeving:** Gebruik kebab-case (bijv. `gebruikers-beheer.spec.ts`).
+  - **Groepering:** Gebruik `test.describe` om gerelateerde scenario's te groeperen.
 
-## Testing Conventies (Best Practices)
-- **Locators:** Geef de voorkeur aan door de gebruiker zichtbare locators (Aria-rollen):
-  - `page.getByRole('button', { name: 'Verzenden' })`
-  - `page.getByText('Welkom')`
-  - `page.getByLabel()`
-  - `page.getByPlaceholder()`
-  - `page.getByAltText()`
-  - `page.getByTitle()`
-  - Vermijd CSS-selectors zoals `.btn-primary` of lange XPath-paden. 
-  - Gebruik Test ID's als laatste redmiddel. Wanneer een element geen unieke tekst of heeft, gebruik dan een specifiek test-attribuut. Gebruik de data-testid `page.getByTestId(()`
-- **Scoping:** Als elementen in specifieke blokken staan (zoals "Planning" of "Historie"), gebruik dan `page.locator('...').getByRole(...)` om binnen dat blok te zoeken.
-- **Validatie:** Gebruik altijd web-first assertions zoals `expect(locator).toBeVisible()`.
+  ## Testing Conventies (Best Practices)
+  - **Locators:** Geef de voorkeur aan door de gebruiker zichtbare locators (Aria-rollen):
+    - `page.getByRole('button', { name: 'Verzenden' })`
+    - `page.getByText('Welkom')`
+    - `page.getByLabel()`
+    - `page.getByPlaceholder()`
+    - `page.getByAltText()`
+    - `page.getByTitle()`
+    - Vermijd CSS-selectors zoals `.btn-primary` of lange XPath-paden. 
+    - Gebruik Test ID's als laatste redmiddel. Wanneer een element geen unieke tekst of heeft, gebruik dan een specifiek test-attribuut. Gebruik de data-testid `page.getByTestId(()`
+  - **Scoping:** Als elementen in specifieke blokken staan (zoals "Planning" of "Historie"), gebruik dan `page.locator('...').getByRole(...)` om binnen dat blok te zoeken.
+  - **Validatie:** Gebruik altijd web-first assertions zoals `expect(locator).toBeVisible()`.
 
-## Veelvoorkomende Patronen
-- **State Setup:** Maak gebruik van `test.beforeEach` om naar de juiste URL te navigeren of om verplichte velden in te vullen.
-- **Wachten:** Vertrouw op de automatische wachttijden van Playwright. Gebruik géén harde `page.waitForTimeout()`.
-- **Verplichte velden:** Houd er rekening mee dat sommige velden eerst ingevuld moeten worden voordat andere interacties mogelijk zijn.
+  ## Veelvoorkomende Patronen
+  - **State Setup:** Maak gebruik van `test.beforeEach` om naar de juiste URL te navigeren of om verplichte velden in te vullen.
+  - **Wachten:** Vertrouw op de automatische wachttijden van Playwright. Gebruik géén harde `page.waitForTimeout()`.
+  - **Verplichte velden:** Houd er rekening mee dat sommige velden eerst ingevuld moeten worden voordat andere interacties mogelijk zijn.
 
-## Rapportage
-- Zorg dat elke test een heldere omschrijving heeft (bijv. `test('moet een nieuwe wedstrijd aanmaken', async ({ page }) => { ... })`).
+  ## Rapportage
+  - Zorg dat elke test een heldere omschrijving heeft (bijv. `test('moet een nieuwe wedstrijd aanmaken', async ({ page }) => { ... })`).
